@@ -1,8 +1,8 @@
 def cor(numero_cor=10, cor=''):
     """
-    :param numero_cor: Color separate into a numbers
-    :param cor: command used to set color with "cor.cor(cor='vermelho') for example
-    :return: Code to simplify the use of colors.
+    :param numero_cor: Separate colors into numbers
+    :param cor: The command used to set the color is 'cor.cor(cor='vermelho')', for example.
+    :return: This is a code that simplifies the use of colors.
     """
     if numero_cor == 0:
         return '\033[m'  # 0 Sem cor
