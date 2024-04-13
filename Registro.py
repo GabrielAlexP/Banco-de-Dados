@@ -1,4 +1,3 @@
-from Modulos import cor
 import pickle
 def registro(nome, idade, telefone, cpf, email):
     """
@@ -32,7 +31,7 @@ def cadastro():
         pessoas = pickle.load(file)
     nomes = list(pessoas.keys())
     for nome in nomes:
-        print(cor.cor(cor='verde')+nome.center(60), cor.cor(0))
+        print(nome.center(60))
 
 def novo():
     """
@@ -41,12 +40,12 @@ def novo():
     while True:
         nome = input('Digite o nome: ')
         if not nome.isalpha():
-            print(f'{cor.cor(cor="vermelho")}Por favor, digite apenas letras.{cor.cor(cor="amarelo")}')
+            print('Por favor, digite apenas letras')
             continue
 
         idade = input('Digite a idade: ')
         if not idade.isdigit():
-            print(f'{cor.cor(cor="Vermelho")}Por favor, digite apenas números inteiros.{cor.cor(cor="amarelo")}')
+            print('Por favor, digite apenas números inteiros.')
             continue
         idade = int(idade)
 
@@ -63,13 +62,13 @@ def menu():
     print(30*'-=')
     print('MENU PRINCIPAL'.center(60))
     print(30*'-=')
-    print(f'{cor.cor(cor="Amarelo")}1-{cor.cor(0)} {cor.cor(cor="Azul")}Ver Pessoas Cadastradas{cor.cor(0)}')
-    print(f'{cor.cor(cor="Amarelo")}2-{cor.cor(0)} {cor.cor(cor="Azul")}Novo Cadastro{cor.cor(0)}')
-    print(f'{cor.cor(cor="Amarelo")}3-{cor.cor(0)} {cor.cor(cor="Azul")}Pesquisar Por Pessoa{cor.cor(0)}')
-    print(f'{cor.cor(cor="Amarelo")}4-{cor.cor(0)} {cor.cor(cor="Azul")}Apagar uma Pessoa{cor.cor(0)}')
-    print(f'{cor.cor(cor="Amarelo")}5-{cor.cor(0)} {cor.cor(cor="Azul")}Excluir Banco de Dados{cor.cor(0)}')
-    print(f'{cor.cor(cor="Amarelo")}6-{cor.cor(0)} {cor.cor(cor="Azul")}Encerrar programa{cor.cor(0)}')
-    print('-='*30, cor.cor(cor='amarelo'))
+    print ('1-Ver Pessoas Cadastradas')
+    print ('2-Novo Cadastro')
+    print ('3-Pesquisar Por Pessoa')
+    print ('4-Apagar uma Pessoa')
+    print ('5-Excluir Banco de Dados')
+    print ('6-Encerrar programa')
+    print ('-='*30)
 def pesquisa():
     """
     :return:It will show the user the information of the chosen name.
@@ -79,11 +78,11 @@ def pesquisa():
     nome_pesquisa = input('Digite o nome da pessoa que você deseja pesquisar: ').title().strip()
     if nome_pesquisa in pessoas:
         pessoa = pessoas[nome_pesquisa]
-        print(f"{cor.cor(cor='azul')}Nome: {nome_pesquisa}")
+        print("Nome: {nome_pesquisa}")
         print(f"Idade: {pessoa['idade']}")
         print(f"Telefone: {pessoa['telefone']}")
         print(f"CPF: {pessoa['cpf']}")
-        print(f"Email: {pessoa['email']}{cor.cor(0)}")
+        print(f"Email: {pessoa['email']}")
     else:
         print(f'{nome_pesquisa} não está cadastrado')
 def apaga_tudo():
@@ -117,10 +116,10 @@ def main():
         while True:
             try:
                 perg = int(input('Escolha uma opção: '))
-                print(cor.cor(0)+ 30*'-=')
+                print(30*'-=')
                 break
             except:
-                print(f'{cor.cor(cor="vermelho")}Por favor, digite apenas números.{cor.cor(0)}')
+                print('Por favor, digite apenas números.')
         if perg == 1:
             cadastro()
         elif perg == 2:
